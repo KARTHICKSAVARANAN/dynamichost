@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= hostel.name %> - Details</title>
+</head>
+<body>
+  <h1><%= hostel.name %></h1>
+  <p><strong>City:</strong> <%= hostel.city %></p>
+  <p><strong>Rating:</strong> ⭐ <%= hostel.rating %></p>
+  <p><strong>Price per month:</strong> ₹<%= hostel.price_per_month %></p>
+  <p><strong>Description:</strong> <%= hostel.description %></p>
+
+  <h3>Amenities:</h3>
+  <% if (hostel.amenities.length === 0) { %>
+    <p>No amenities listed.</p>
+  <% } else { %>
+    <ul>
+      <% hostel.amenities.forEach(item => { %>
+        <li><%= item %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <br>
+  <a href="/">⬅ Back to Listings</a>
+</body>
+</html>
